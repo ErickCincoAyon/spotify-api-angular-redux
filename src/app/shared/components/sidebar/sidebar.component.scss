@@ -1,0 +1,69 @@
+@import '../../../scss/colors.scss';
+
+.sidebar {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    .logo {
+        width: 100%;
+        height: 185px;
+        cursor: pointer;
+
+        img {
+            filter: invert(64%) sepia(68%) saturate(560%) hue-rotate(86deg) brightness(98%) contrast(88%);
+        }
+        
+        .cruz-img {
+            width: 100px;
+            margin-top: 20px;
+        }
+    
+        .letters-img {
+            width: 80%;
+        }
+    }
+    
+
+    .sidebar-list {
+        width: 100%;
+        height: calc(100% - 285px);
+        list-style: none;
+        padding-top: 10px;
+
+        li {
+            padding: 5px 25px;
+            text-align: left;
+            color: $font-white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: $transition;
+            cursor: pointer;
+
+            i {
+                font-size: 20px;
+                margin: 0;
+                margin-top: 2px;
+                margin-right: 15px;
+            }
+
+            span {
+                float: right;
+            }
+
+            .small {
+                font-size: 13px;
+                margin-top: 7px;
+            }
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+
+    .footer-div {
+        width: 100%;
+        height: 100px;
+    }
+}

@@ -1,0 +1,18 @@
+<div class="user-session">
+    <div class="session">
+        <img *ngIf="user && user.images.length === 0" src="../../../../../assets/avatar_default.png" alt="avatar_default.png">
+        <img *ngIf="user && user.images.length > 0" src="{{ user.images[0].url }}" alt="{{ user.images[0].url }}">
+        <h3>{{ user?.display_name }} <span> <i class="caret down icon"></i></span></h3>
+    </div>
+
+    <div class="settings">
+        <ul>
+            <li><span>Correo</span>{{ user?.email }}</li>
+            <li><span>Nombre</span>{{ user?.display_name }}</li>
+            <li><span>Pais</span>{{ user?.country }}</li>
+            <li><span>Tipo de cuenta</span>{{ user?.type }}</li>
+            <li><span>Seguidores</span>{{ user?.followers?.total }}</li>
+        </ul>
+        <button class="btn mt-20" (click)="logout();">Cerrar sesion</button>
+    </div>
+</div>

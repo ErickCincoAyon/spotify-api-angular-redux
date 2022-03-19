@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+// font-family: 'Quicksand', sans-serif;
+// font-family: 'Courgette', cursive;
+// font-family: 'Montserrat', sans-serif;
+@import './app/scss/colors.scss';
+
+*, body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.toast-success{
+    background-color: $main !important;
+}
+
+.toast-info{
+    background-color: $danger !important;
+}
+  
+.toast-message{
+    letter-spacing: 1px !important;
+    font-size: 13px !important;
+    line-height: 19px !important;
+}
+
+.ngx-toastr {
+    width: 350px !important;
+}
+
+.btn {
+    padding: 20px 15px;
+    border: 0;
+    outline: none;
+    width: 100%;
+    margin: 10px auto;
+    background-color: $main-dark;
+    color: $white;
+    letter-spacing: 1px;
+    font-size: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: $transition;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    font-weight: bold;
+
+    &:hover {
+       box-shadow: $shadow;
+       background-color: $white;
+       color: $font-dark;
+   }
+}
+
+.btn-load {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 20px auto;
+    background-color: $card-bg;
+    color: $font-white;
+    border: 0;
+    border: 1px solid $main-dark;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: $transition;
+    cursor: pointer;
+
+    i {
+        font-size: 12px;
+        margin: 0;
+        margin-left: 1px;
+        margin-top: -1px;
+        padding: 0;
+        font-weight: lighter;
+    }
+
+    &:hover {
+        background-color: $main-dark;
+        color: $green;
+    }
+}

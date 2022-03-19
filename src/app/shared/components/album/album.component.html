@@ -1,0 +1,13 @@
+<div class="album" *ngIf="album" routerLink="/album/{{ album.id }}">
+    <div class="type">
+        {{ album.type }}
+    </div>
+    <img class="album-img" src="{{ album.images[0].url }}" alt="{{ album.images[0].url }}">
+    <ul class="data">
+        <li><span>Album</span>{{ album.name }}</li>
+        <li><span>Tipo</span>{{ album.album_type }}</li>
+        <h3>Artistas</h3>
+        <li *ngFor="let artist of album.artists" class="artist-name"><span class="font-smaller">{{ artist.name }}</span></li>
+    </ul>
+    <div class="release_data">{{ album.release_date }}</div>
+</div>

@@ -1,0 +1,8 @@
+<section>
+    <h1>{{ title }}</h1>
+    <ul *ngIf="albums && albums.length > 0">
+        <li *ngFor="let album of albums">
+            <app-album [album]="album"></app-album>
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,5 @@
+<div class="track" *ngIf="track" routerLink="/track/{{ track.id }}">
+    <span class="index">{{ index }}.</span>
+    <span class="track-name">{{ track.name }}</span>
+    <span class="duration"><span> {{ msToMinutes( track.duration_ms ) }}</span><i class="clock icon"></i></span>
+</div>

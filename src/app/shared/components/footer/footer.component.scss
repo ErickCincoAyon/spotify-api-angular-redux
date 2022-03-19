@@ -1,0 +1,29 @@
+@import '../../../scss/colors.scss';
+
+.footer {
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid $main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    h4 {
+        width: 100%;
+        color: $font-white;
+    }
+
+    p {
+        color: $font-white;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+
+        span {
+            font-weight: lighter;
+            color: $green;
+        }
+    }
+}

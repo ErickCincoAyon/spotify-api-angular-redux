@@ -1,0 +1,43 @@
+<div class="artist-page" *ngIf="artist" #albumList>
+    <div class="header-artist">
+        <div class="profile">
+            <div class="left">
+                <img src="{{ artist.images[0].url }}" alt="{{ artist.images[0].url }}">
+            </div>
+            <div class="right">
+                <ul>
+                    <h3>Artista</h3>
+                    <li><span>Nombre:</span>{{ artist.name }}</li>
+                    <li><span>Tipo:</span>{{ artist.type }}</li>
+                    <li><span>Popularidad:</span>{{ artist.popularity }}</li>
+                    <h3>Generos</h3>
+                    <li class="genre" *ngFor="let genre of artist.genres"><span><i class="tag icon"></i></span>{{ genre }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="top-songs">
+            <ul>
+                <h3>Canciones mas escuchadas</h3>
+                <li *ngFor="let track of tracks; let i = index">
+                    <app-track
+                        [index]="i + 1"
+                        [track]="track"
+                    ></app-track>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="albums">
+        <app-album-list
+            [title]="'ALBUMS'"
+            [albums]="albums"
+        ></app-album-list>
+        
+        <button 
+            *ngIf="nextPage"
+            class="btn-load" (click)="loadMore( page + 6 );"
+        ><i class="plus icon"></i></button>
+    </div>
+    
+</div>

@@ -1,0 +1,10 @@
+<div class="search">
+    <form [formGroup]="searchForm" (ngSubmit)="search();">
+        <input 
+            placeholder="Busca tu artista favorito" 
+            formControlName="search"
+            (input)="searchTypping($event);"
+        >
+        <button type="submit" [disabled]="searchForm.invalid"><i class="search icon"></i></button>
+    </form>
+</div>

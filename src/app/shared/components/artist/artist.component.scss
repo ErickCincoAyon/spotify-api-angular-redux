@@ -1,0 +1,51 @@
+@import '../../../scss/colors.scss';
+
+.artist {
+    width: 95%;
+    margin: 0 auto;
+    background-color: $card-bg;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    text-align: center;
+    border-radius: 3px;
+    height: 230px;
+    position: relative;
+    transition: $transition;
+    cursor: pointer;
+
+    img {
+        margin-top: 10px;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    h2 {
+        font-size: 13px;
+        color: $font-white;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    p {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        color: $font-gray-light;
+        text-align: left;
+        padding: 0 10px;
+        font-size: 11px;
+        font-style: italic;
+
+        span {
+            color: $green;
+            float: right;
+        }
+    }
+
+    &:hover {
+        box-shadow: rgba(255, 255, 255, 0.12) 0px 1px 3px, rgba(255, 255, 255, 0.24) 0px 1px 2px;
+    }
+}

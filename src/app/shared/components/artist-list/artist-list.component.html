@@ -1,0 +1,8 @@
+<section>
+    <h1>{{ title }}</h1>
+    <ul *ngIf="artists && artists.length > 0">
+        <li *ngFor="let artist of artists">
+            <app-artist [artist]="artist"></app-artist>
+        </li>
+    </ul>
+</section>

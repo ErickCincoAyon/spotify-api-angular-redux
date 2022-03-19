@@ -1,0 +1,44 @@
+<div class="album-page" *ngIf="album" #albumList>
+    <div class="header-artist">
+        <div class="profile">
+            <div class="left">
+                <img src="{{ album.images[0].url }}" alt="{{ album.images[0].url }}">
+            </div>
+            <div class="right">
+                <ul>
+                    <h3>Album</h3>
+                    <li><span>Nombre:</span>{{ album.name }}</li>
+                    <li><span>Tipo:</span>{{ album.album_type }}</li>
+                    <li><span>Popularidad:</span>{{ album.popularity }}</li>
+                    <li><span>Tracks:</span>{{ album.total_tracks }}</li>
+                    <h3>Artistas</h3>
+                    <li 
+                        class="artist" 
+                        *ngFor="let artist of album.artists"
+                        routerLink="/artista/{{ artist.id }}"
+                    >
+                        <span><i class="microphone icon"></i></span>{{ artist.name }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="top-songs">
+            <h3>Canciones</h3>
+            <ul>
+                <li *ngFor="let track of tracks; let i = index">
+                    <app-track
+                        [index]="i + 1"
+                        [track]="track"
+                    ></app-track>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="artists" *ngIf="artists">
+        <app-artist-list
+            [title]="'Artistas relacionados a ' + album.artists[0].name"
+            [artists]="artists.slice(0, 16)"
+        ></app-artist-list>
+    </div>
+</div>
