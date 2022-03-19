@@ -29,6 +29,6 @@ import { TrackPageComponent } from './track-page/track-page.component';
     SharedModule,
     StoreModule.forFeature( musicFeatureName, musicReducer ),
     EffectsModule.forFeature([ MusicEffects ]),
-  ]
+  ],
 })
 export class PagesModule { }

@@ -7,6 +7,7 @@ export const environment = {
   client_id: 'e6adb007f7cd4ebabcbccba031fe8285',
   client_secret: 'f0773d2f78de4c42808e3fd25546a047',
   redirect_uri: 'http://localhost:4200/auth/authorized',
+  server_url: 'https://api.spotify.com/v1',
 };
 
 /*

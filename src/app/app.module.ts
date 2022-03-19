@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { EffectsModule } from '@ngrx/effects';
@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './auth/auth.module';
+import { AccessTokenInterceptor } from './core/access-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { AuthModule } from './auth/auth.module';
       positionClass: 'toast-bottom-right'
     }),
   ],
-  providers: [],
+  providers: [ 
+    {provide: HTTP_INTERCEPTORS, useClass: AccessTokenInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
