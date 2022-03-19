@@ -54,6 +54,22 @@
         }
         .movil {
             margin: 0;
+            input {
+                padding: 10px 20px;
+                font-size: 15px;
+                width: 100%;
+                &::placeholder {
+                    text-align: center;
+                }
+            }
+            button {
+                width: 100%;
+                margin: 15px 0;
+                background-color: #18a74e;
+                color: $font-white;
+                letter-spacing: 0;
+                font-size: 15px;
+            }
         }
     }
 }
