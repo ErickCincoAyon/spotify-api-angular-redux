@@ -67,3 +67,9 @@
         height: 100px;
     }
 }
+
+@media ( max-width: 1013px ) {
+    .sidebar { 
+        display: none;
+    }
+}

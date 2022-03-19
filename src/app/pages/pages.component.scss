@@ -18,3 +18,35 @@
         background-color: $main;
     }
 }
+
+@media ( max-width: 1013px ) {
+    .pages {
+        .left-side {
+            display: none;
+        }
+        .right-side {
+            width: 100%;
+            flex: 0 0 100%;
+            height: auto;
+        }
+    }
+}
+
+@media ( min-width: 1014px ) {
+    .pages {
+        .left-side {
+            width: 200px;
+        }
+    }
+    .pages-movil {
+        display: none;
+    }
+}
+
+@media ( min-width: 1250px ) {
+    .pages {
+        .left-side {
+            width: 250px;
+        }
+    }
+}

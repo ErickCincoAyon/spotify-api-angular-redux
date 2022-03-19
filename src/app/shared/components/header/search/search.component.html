@@ -1,5 +1,14 @@
 <div class="search">
-    <form [formGroup]="searchForm" (ngSubmit)="search();">
+    <form [formGroup]="searchForm" (ngSubmit)="search();" class="web">
+        <input 
+            placeholder="Busca tu artista favorito" 
+            formControlName="search"
+            (input)="searchTypping($event);"
+        >
+        <button type="submit" [disabled]="searchForm.invalid"><i class="search icon"></i></button>
+    </form>
+
+    <form [formGroup]="searchForm" (ngSubmit)="searchMovil();" class="movil">
         <input 
             placeholder="Busca tu artista favorito" 
             formControlName="search"

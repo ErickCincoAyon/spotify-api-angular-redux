@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Event, NavigationStart, Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { debounceTime, Subject, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { MusicState } from 'src/app/pages/store/music.state';
@@ -12,6 +12,8 @@ import { getArtistsByName } from '../../../../pages/store/actions/music.action';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit, OnDestroy {
+
+  @Output() closeSidebar: EventEmitter<boolean> = new EventEmitter();
 
   public searchForm = this._fb.group({
     search: ['', [ Validators.required ]],
@@ -50,6 +52,12 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   search(): void {
     this.searchByKey = true;
+    this._router.navigate(['/artistas'], { queryParams: this.searchForm.getRawValue() });
+  }
+
+  searchMovil(): void {
+    this.searchByKey = true;
+    this.closeSidebar.emit( false );
     this._router.navigate(['/artistas'], { queryParams: this.searchForm.getRawValue() });
   }
 

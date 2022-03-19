@@ -14,7 +14,7 @@
         height: 550px;
         background-color: $main-dark;
         box-shadow: $box-shadow;
-        border-radius: 2px;
+        border-radius: 3px;
         text-align: center;
         padding: 30px;
         padding-top: 70px;
@@ -100,6 +100,32 @@
 
         img {
             height: 80%;
+        }
+    }
+}
+
+@media ( max-width: 1013px ) {
+    .authorized {
+        .content {
+            width: 90%;
+            height: auto;
+            padding: 30px 10px 70px;
+            border-radius: 3px;
+            .go-auth {
+                display: none;
+            }
+            img {
+                width: 70%;
+            }
+            .auth {
+                h2 {
+                    margin: 20px 0; 
+                    padding: 0 15px;
+                }
+            }
+        }
+        .by-spotify {
+            display: none;
         }
     }
 }

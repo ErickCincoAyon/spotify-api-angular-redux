@@ -7,3 +7,31 @@
         <app-user-session></app-user-session>
     </div>
 </nav>
+
+<nav class="header-movil">
+    <img src="../../../../assets/omnidoc-logo.png" alt="omnidoc-logo.png" routerLink="/">
+    <div class="div-bars">
+        <i class="bars icon" (click)="toggleSidebarMovil( !isOpenSidebar );"></i>
+    </div>
+
+    <div class="sidebar-movil" id="menu-movil">
+        <nav class="header-movil border-bottom">
+            <img src="../../../../assets/omnidoc-logo.png" alt="omnidoc-logo.png" routerLink="/">
+            <div class="div-bars">
+                <i class="bars icon" (click)="toggleSidebarMovil( !isOpenSidebar );"></i>
+            </div>
+        </nav>
+
+        <div class="user">
+            <app-user-session></app-user-session>
+        </div>
+        <ul>
+            <li (click)="toggleSidebarMovil( !isOpenSidebar );" routerLink="/"><i class="home icon"></i>Inicio</li>
+            <li>
+                <app-search
+                    (closeSidebar)="closeSidebarHandler($event)"
+                ></app-search>
+            </li>
+        </ul>
+    </div>
+</nav>

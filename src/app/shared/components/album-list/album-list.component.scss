@@ -24,11 +24,29 @@ section {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
 
         li {
             flex: 0 0 16.6%;
+            max-width: 255.45px;
+            min-width: 250px;
             margin-bottom: 10px;
+        }
+    }
+}
+
+@media ( max-width: 1013px ) {
+    section {
+        h1 {
+            font-size: 18px;
+        }
+        ul {
+            padding: 10px;
+            li {
+                max-width: auto;
+                min-width: auto;
+                flex: 0 0 50%;
+            }
         }
     }
 }

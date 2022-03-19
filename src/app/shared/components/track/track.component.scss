@@ -41,3 +41,11 @@
         color: $green;
     }
 }
+
+@media ( max-width: 1013px ) {
+    .track {
+        .track-name {
+            max-width: 200px;
+        }
+    }
+}

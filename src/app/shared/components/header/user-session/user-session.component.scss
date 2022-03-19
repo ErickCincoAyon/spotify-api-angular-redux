@@ -95,3 +95,43 @@
         }
     }
 }
+
+@media ( max-width: 1013px ) {
+    .user-session {
+        display: none;
+    }
+    .user-session-movil {
+        width: 100%;
+        text-align: center;
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0;
+        }
+        h3 {
+            margin: 0;
+            margin-top: 5px;
+            width: 100%;
+            color: $font-white;
+        }
+        .btn-logout-movil {
+            width: 100%;
+            padding: 15px 0;
+            margin-top: 10px;
+            border: 0;
+            border-radius: 3px;
+            color: $font-white;
+            text-transform: uppercase;
+            font-weight: bold;
+            background-color: #18a74e;
+        }
+    }
+}
+
+@media ( min-width: 1014px ) {
+    .user-session-movil {
+        display: none;
+    }
+}

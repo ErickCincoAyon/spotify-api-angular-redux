@@ -88,3 +88,18 @@
         }
     }
 }
+
+@media ( max-width: 1013px ) {
+    .track-page {
+        height: auto;
+        padding: 0 10px 40px;
+        h3 {
+            margin: 20px 0 25px;
+            font-size: 20px;
+        }
+
+        .music-player {
+            width: 100%;
+        }
+    }
+}

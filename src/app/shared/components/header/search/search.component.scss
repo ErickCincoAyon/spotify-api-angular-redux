@@ -45,3 +45,24 @@
         }
     }
 }
+
+@media ( max-width: 1013px ) {
+    .search {
+        justify-content: center;
+        .web {
+            display: none;
+        }
+        .movil {
+            margin: 0;
+        }
+    }
+}
+
+@media ( min-width: 1014px ) {
+    .search {
+        justify-content: center;
+        .movil {
+            display: none;
+        }
+    }
+}
