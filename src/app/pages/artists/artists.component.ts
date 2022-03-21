@@ -5,6 +5,7 @@ import { MusicState } from '../store/music.state';
 import { selectMusicArtists } from '../store/selectors/music.selector';
 import { ArtistModel } from '../models/artist.model';
 import { takeUntil, Subject } from 'rxjs';
+import { resetArtists } from '../store/actions/music.action';
 
 @Component({
   selector: 'app-artists',
@@ -40,6 +41,7 @@ export class ArtistsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this._store.dispatch( resetArtists() );
     this.componentDestroyed$.next(1);
   }
 

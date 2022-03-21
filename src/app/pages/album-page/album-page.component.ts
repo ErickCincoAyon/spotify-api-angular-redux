@@ -3,7 +3,7 @@ import { AlbumModel } from '../models/album.model';
 import { ActivatedRoute } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { MusicState } from '../store/music.state';
-import { getAlbum, resetAlbum, resetTopTracksByArtist, getRelatedArtists } from '../store/actions/music.action';
+import { getAlbum, resetAlbum, resetTopTracksByArtist, getRelatedArtists, resetArtists } from '../store/actions/music.action';
 import { selectMusicAlbum, selectMusicTracks, selectMusicArtists } from '../store/selectors/music.selector';
 import { TrackModel } from '../models/track.model';
 import { Subject, takeUntil } from 'rxjs';
@@ -52,6 +52,7 @@ export class AlbumPageComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this._store.dispatch( resetAlbum() );
     this._store.dispatch( resetTopTracksByArtist() );
+    this._store.dispatch( resetArtists() );
     this.componentDestroyed$.next(1);
   }
 
