@@ -31,15 +31,9 @@ export class AppComponent implements OnInit {
       let message: string = '';
       if ( value ) {
 
-        if ( value && typeof value === 'string' ) {
-          message = 'Tu cuenta no se encuentra registrada en la lista de oyentes omnidoc music !';
-        } else if ( value.error_description === 'Invalid refresh token' || value.error.message === 'Invalid access token' ) {
-          message = 'La sesion ha caducado, vuelve a iniciar sesion !';
-        } else if ( value.error_description === 'Invalid authorization code' ) {
-          message = 'Debes iniciar sesion con tu cuenta spotify, para entrar a este sitio !';
-        }
-
+        message = this.setMessage( value );
         this._toastrService.error( message );
+        
         this._store.dispatch( resetAuthError() );
         this._router.navigate(['/auth']);
         localStorage.removeItem('access_token');
@@ -48,6 +42,20 @@ export class AppComponent implements OnInit {
       
     });
 
+  }
+
+  setMessage( error: any ): string {
+    let message: string = '';
+
+    if ( typeof error === 'string' ) {
+      message = 'Tu cuenta no se encuentra registrada en la lista de oyentes omnidoc music !';
+    } else if ( error.error_description === 'Invalid refresh token' || error.error.message === 'Invalid access token' ) {
+      message = 'La sesion ha caducado, vuelve a iniciar sesion !';
+    } else if ( error.error_description === 'Invalid authorization code' ) {
+      message = 'Debes iniciar sesion con tu cuenta spotify, para entrar a este sitio !';
+    }
+
+    return message;
   }
 
 }
