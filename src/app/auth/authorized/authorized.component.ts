@@ -45,18 +45,14 @@ export class AuthorizedComponent implements OnInit {
       }
     });
 
-    /* Select the error and show if this happens, print and reset */
-    this._store.pipe( select( selectError )).subscribe(( value ) => {
-      if ( value ) {
-        this._toastrService.error( value.error_description );
-        this._store.dispatch( resetAuthError() );
-      }
-    });
-
   }
 
   getAccessToken( code: string ): void {
     this._store.dispatch( getAccessToken({ code }));
+  }
+
+  goAuth(): void {
+    this._router.navigate(['/auth'], { queryParams: { login: true }});
   }
 
   goSpotify(): void {
