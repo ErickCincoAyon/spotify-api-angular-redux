@@ -41,4 +41,8 @@
             [artists]="artists.slice(0, 16)"
         ></app-artist-list>
     </div>
+
+    <div class="artists" *ngIf="artists?.length === 0">
+        <h3>No se han encontrado Artistas relacionados !</h3>
+    </div>
 </div>

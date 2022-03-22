@@ -101,10 +101,10 @@
 @media ( min-width: 1014px ) { 
     .header {
         .search {
-            width: 400px;
+            width: 350px;
         }
         .user {
-            width: 300px;
+            width: 350px;
         }
     }
     .header-movil {
@@ -114,11 +114,8 @@
 
 @media ( min-width: 1250px ) { 
     .header {
-        .search {
-            width: 500px;
-        }
         .user {
-            width: 350px;
+            width: 400px;
         }
     }
 }

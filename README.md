@@ -5,6 +5,13 @@ Clonar este repositorio y previamente instalar todas las dependencias utilizando
 Despues de clonar el repositorio, ejecute el siguiente comando en su cmd para correr la aplicación: "ng serve"
 Este comando, correra la aplicacion en la siguiente URL: `http://localhost:4200/`.
 
+## Cuenta de acceso
+
+Para iniciar sesión, deben ingresar los datos en la sección que aparece despues de las opciónes
+Continuar con facebook, Continuar con apple, Continuar con google, Continuar con número de teléfono.
+
+Dirección de correo o nombre de usuario: omnidoc.erickcinco@gmail.com
+Contraseña: #omnidoc.Test
 
 ## Información
 

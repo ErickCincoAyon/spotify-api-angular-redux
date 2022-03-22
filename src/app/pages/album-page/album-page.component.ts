@@ -46,6 +46,7 @@ export class AlbumPageComponent implements OnInit, OnDestroy {
 
     this._store.pipe( takeUntil( this.componentDestroyed$ ), select( selectMusicArtists )).subscribe(( value ) => {
       this.artists = ( value! ) && value;
+      console.log( this.artists );
     });
   }
 
