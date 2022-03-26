@@ -1,19 +1,12 @@
-<div class="track-page" *ngIf="track">
+<div class="track-page" *ngIf="track && embedTrackUrl">
     <h3>Detalle de canción</h3>
     <div class="music-player">
-        <div class="album" routerLink="/album/{{ track.album.id }}">
-            <img src="{{ track.album.images[0].url }}" alt="{{ track.album.images[0].url }}">
-            <div class="over-album-image">
-                <div class="name">
-                    <h4>{{ track.name }}</h4>
-                    <h5>{{ track.album.name }}</h5>
-                </div>
-            </div>
-        </div>
-        <div class="song">
-            <audio src="{{ track.preview_url }}" controls>	
-                <p>Fallback content goes here.</p>
-            </audio>
-        </div>
+        <iframe 
+            [src]="embedTrackUrl" 
+            frameBorder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        ></iframe>
     </div>
+
+    
 </div>
