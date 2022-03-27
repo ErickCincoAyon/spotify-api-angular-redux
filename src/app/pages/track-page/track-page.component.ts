@@ -33,7 +33,6 @@ export class TrackPageComponent implements OnInit, OnDestroy {
     this._store.pipe( takeUntil( this.componentDestroyed$ ), select( selectMusicTrack )).subscribe(( value ) => {
       this.track = ( value! ) && value;
       this.embedTrackUrl = ( value! ) && this.transform( `https://open.spotify.com/embed/track/${ value.id }` );
-      console.log( this.embedTrackUrl );
     });
   }
 
